@@ -29,6 +29,12 @@ spring:
         id: inventory-service
         uri: lb://inventory-service
         predicates[0]: Path=/api/inventory
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8181/realms/spring-boot-microservices-realm
+
 
 logging:
   level:
